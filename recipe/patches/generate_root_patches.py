@@ -8,7 +8,7 @@ the meta.yaml file. To be used within the patches/root directory.
 
 print("\n".join(
     [f'      - patches/root/{name}  # [variant and variant.startswith("root_")]'
-     for name in os.listdir()]))
+     for name in sorted(os.listdir())]))
 """
 import glob
 import os
@@ -30,7 +30,7 @@ def change_directory(path: str):
 
 
 LLVM_TAG = "llvmorg-16.0.6"
-ROOT_TAG = "v6-32-00"
+ROOT_TAG = "master"
 
 
 def retrieve_root_llvm_fork_tag() -> str:
